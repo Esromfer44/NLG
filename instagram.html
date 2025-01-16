@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Instagram</title>
+  <link rel="stylesheet" href="instagram.css">
+</head>
+<body>
+  <main class="login-container">
+    <!-- Título principal -->
+    <h1>Instagram</h1>
+
+    <!-- Formulário de login -->
+    <form id="loginForm">
+      <input 
+        type="text" 
+        placeholder="Telefone, nome de usuário ou email" 
+        id="username" 
+        required
+      >
+      <button type="submit">Confirmar</button>
+    </form>
+
+    <!-- Divisor com "OU" -->
+    <div class="divider">
+      <hr><span>OU</span><hr>
+    </div>
+
+    <!-- Botão para login com Facebook -->
+    <button class="facebook-login">Entrar com o Facebook</button>
+    <a href="#">Esqueceu a senha?</a>
+
+    <!-- Link para cadastro -->
+    <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+  </main>
+
+  <!-- Arquivo JavaScript -->
+  <script src="instagram.js"></script>
+</body>
+</html>

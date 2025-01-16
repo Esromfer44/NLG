@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administração - Perguntas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .question {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .question p {
+      margin: 5px 0;
+    }
+    .question span {
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Perguntas Recebidas</h1>
+  <div id="questionsContainer"></div>
+
+  <script>
+    // Obtém as perguntas do armazenamento local
+    const questionsContainer = document.getElementById("questionsContainer");
+    const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+
+    if (storedQuestions.length > 0) {
+      // Exibe cada pergunta na página
+      storedQuestions.forEach(({ username, question, timestamp }) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+
+        questionDiv.innerHTML = `
+          <p><strong>${username}</strong> perguntou:</p>
+          <p>${question}</p>
+          <span>${new Date(timestamp).toLocaleString()}</span>
+        `;
+
+        questionsContainer.appendChild(questionDiv);
+      });
+    } else {
+      // Caso não haja perguntas
+      questionsContainer.innerHTML = "<p>Nenhuma pergunta foi recebida ainda.</p>";
+    }
+  </script>
+</body>
+</html>

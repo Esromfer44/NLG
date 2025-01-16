@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carregamento com Erro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <!-- Link para iniciar o processo -->
+    <a href="#" id="startProcess">Clique aqui</a>
+    
+    <!-- Mensagem de erro -->
+    <div id="errorMessage" class="hidden">
+      <p>Erro na rede. Tentando novamente...</p>
+    </div>
+
+    <!-- Carregamento -->
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
